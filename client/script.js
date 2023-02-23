@@ -83,7 +83,7 @@ const handleSubmit = async (e) => {
   const response = await fetch('https://c-ai.onrender.com/',{
     method: 'POST',
     headers:{
-      'Content-type': 'application/json'
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({
       prompt: data.get('prompt')

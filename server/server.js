@@ -15,13 +15,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get('/', async (req,res) =>{
+app.get('/', async (req, res) =>{
     res.status(200).send({
         message: 'hello from cAI',
     })
 });
 
-app.post('/', async (req,res) =>{
+app.post('/', async (req, res) =>{
     try {
         const prompt = req.body.prompt;
 
@@ -39,7 +39,7 @@ app.post('/', async (req,res) =>{
         })
     } catch (error) {
         console.log(error);
-        res.status(500).send({error})
+        res.status(500).send({error} || 'Something went wrong');
     }
 });
 
